@@ -1,0 +1,181 @@
+
+    -----------------------------------------------------------------------
+          Psi4: An Open-Source Ab Initio Electronic Structure Package
+                               Psi4 1.3.2 release
+
+                         Git: Rev {HEAD} ecbda83 
+
+
+    R. M. Parrish, L. A. Burns, D. G. A. Smith, A. C. Simmonett,
+    A. E. DePrince III, E. G. Hohenstein, U. Bozkaya, A. Yu. Sokolov,
+    R. Di Remigio, R. M. Richard, J. F. Gonthier, A. M. James,
+    H. R. McAlexander, A. Kumar, M. Saitow, X. Wang, B. P. Pritchard,
+    P. Verma, H. F. Schaefer III, K. Patkowski, R. A. King, E. F. Valeev,
+    F. A. Evangelista, J. M. Turney, T. D. Crawford, and C. D. Sherrill,
+    J. Chem. Theory Comput. 13(7) pp 3185--3197 (2017).
+    (doi: 10.1021/acs.jctc.7b00174)
+
+
+                         Additional Contributions by
+    P. Kraus, H. Kruse, M. H. Lechner, M. C. Schieber, R. A. Shaw,
+    A. Alenaizan, R. Galvelis, Z. L. Glick, S. Lehtola, and J. P. Misiewicz
+
+    -----------------------------------------------------------------------
+
+
+    Psi4 started on: Tuesday, 19 April 2022 03:48PM
+
+    Process ID: 5278
+    Host:       atlantis
+    PSIDATADIR: /home/akrom/software/anaconda3/envs/ffpenv/share/psi4
+    Memory:     500.0 MiB
+    Threads:    1
+    
+  ==> Input File <==
+
+--------------------------------------------------------------------------
+set basis  cc-pVDZ
+molecule {
+0 1
+   C        0.32153        0.81326        0.00000
+   C       -0.86505       -0.12817        0.00000
+   C        0.54353       -0.68508        0.00000
+   H        0.53795        1.36069       -0.92039
+   H        0.53795        1.36069        0.92039
+   H       -1.44742       -0.21449        0.92034
+   H       -1.44742       -0.21449       -0.92034
+   H        0.90937       -1.14629       -0.92037
+   H        0.90937       -1.14629        0.92037
+}
+energy('CCSD')
+frequencies('CCSD')
+--------------------------------------------------------------------------
+
+*** tstart() called on atlantis
+*** at Tue Apr 19 15:48:49 2022
+
+   => Loading Basis Set <=
+
+    Name: CC-PVDZ
+    Role: ORBITAL
+    Keyword: BASIS
+    atoms 1-3 entry C          line   138 file /home/akrom/software/anaconda3/envs/ffpenv/share/psi4/basis/cc-pvdz.gbs 
+    atoms 4-9 entry H          line    22 file /home/akrom/software/anaconda3/envs/ffpenv/share/psi4/basis/cc-pvdz.gbs 
+
+
+         ---------------------------------------------------------
+                                   SCF
+               by Justin Turney, Rob Parrish, Andy Simmonett
+                          and Daniel G. A. Smith
+                              RHF Reference
+                        1 Threads,    500 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: cs
+    Full point group: Cs
+
+    Geometry (in Angstrom), charge = 0, multiplicity = 1:
+
+       Center              X                  Y                   Z               Mass       
+    ------------   -----------------  -----------------  -----------------  -----------------
+         C            0.321531939855     0.813261460475     0.000000000000    12.000000000000
+         C           -0.865048060145    -0.128168539525     0.000000000000    12.000000000000
+         C            0.543531939855    -0.685078539525     0.000000000000    12.000000000000
+         H            0.537951939855     1.360691460475    -0.920390000000     1.007825032230
+         H            0.537951939855     1.360691460475     0.920390000000     1.007825032230
+         H           -1.447418060145    -0.214488539525     0.920340000000     1.007825032230
+         H           -1.447418060145    -0.214488539525    -0.920340000000     1.007825032230
+         H            0.909371939855    -1.146288539525    -0.920370000000     1.007825032230
+         H            0.909371939855    -1.146288539525     0.920370000000     1.007825032230
+
+  Running in cs symmetry.
+
+  Rotational constants: A =      0.66472  B =      0.66470  C =      0.41647 [cm^-1]
+  Rotational constants: A =  19927.70596  B =  19927.20236  C =  12485.44714 [MHz]
+  Nuclear repulsion =   75.281464809014025
+
+  Charge       = 0
+  Multiplicity = 1
+  Electrons    = 24
+  Nalpha       = 12
+  Nbeta        = 12
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is PK.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is SAD.
+  Energy threshold   = 1.00e-08
+  Density threshold  = 1.00e-08
+  Integral threshold = 0.00e+00
+
+  ==> Primary Basis <==
+
+  Basis Set: CC-PVDZ
+    Blend: CC-PVDZ
+    Number of shells: 36
+    Number of basis function: 72
+    Number of Cartesian functions: 75
+    Spherical Harmonics?: true
+    Max angular momentum: 2
+
+  ==> Pre-Iterations <==
+
+   -------------------------------------------------------
+    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
+   -------------------------------------------------------
+     A'        45      45       0       0       0       0
+     A"        27      27       0       0       0       0
+   -------------------------------------------------------
+    Total      72      72      12      12      12       0
+   -------------------------------------------------------
+
+  ==> Integral Setup <==
+
+
+Traceback (most recent call last):
+  File "/home/akrom/software/anaconda3/envs/ffpenv/bin/psi4", line 287, in <module>
+    exec(content)
+  File "<string>", line 32, in <module>
+  File "/home/akrom/software/anaconda3/envs/ffpenv/lib//python3.7/site-packages/psi4/driver/driver.py", line 556, in energy
+    wfn = procedures['energy'][lowername](lowername, molecule=molecule, **kwargs)
+  File "/home/akrom/software/anaconda3/envs/ffpenv/lib//python3.7/site-packages/psi4/driver/procrouting/proc.py", line 748, in select_ccsd
+    return func(name, **kwargs)
+  File "/home/akrom/software/anaconda3/envs/ffpenv/lib//python3.7/site-packages/psi4/driver/procrouting/proc.py", line 2262, in run_ccenergy
+    ref_wfn = scf_helper(name, **kwargs)  # C1 certified
+  File "/home/akrom/software/anaconda3/envs/ffpenv/lib//python3.7/site-packages/psi4/driver/procrouting/proc.py", line 1363, in scf_helper
+    e_scf = scf_wfn.compute_energy()
+  File "/home/akrom/software/anaconda3/envs/ffpenv/lib//python3.7/site-packages/psi4/driver/procrouting/scf_proc/scf_iterator.py", line 84, in scf_compute_energy
+    self.initialize()
+  File "/home/akrom/software/anaconda3/envs/ffpenv/lib//python3.7/site-packages/psi4/driver/procrouting/scf_proc/scf_iterator.py", line 197, in scf_initialize
+    mints.one_electron_integrals()
+
+RuntimeError: 
+Fatal Error: PSIO Error
+Error occurred in file: /scratch/psilocaluser/conda-builds/psi4-multiout_1563933640427/work/psi4/src/psi4/libpsio/toclen.cc on line: 113
+The most recent 5 function calls were:
+
+psi::PSIO::wt_toclen(unsigned long, unsigned long)
+psi::PSIO::write(unsigned long, char const*, char*, unsigned long, psi::psio_address, psi::psio_address*)
+psi::PSIO::write_entry(unsigned long, char const*, char*, unsigned long)
+
+
+
+Printing out the relevant lines from the Psithon --> Python processed input file:
+       H       -1.44742       -0.21449       -0.92034
+       H        0.90937       -1.14629       -0.92037
+       H        0.90937       -1.14629        0.92037
+    """)
+    core.IO.set_default_namespace("")
+--> energy('CCSD')
+    frequencies('CCSD')
+
+    Psi4 stopped on: Tuesday, 19 April 2022 03:48PM
+    Psi4 wall time for execution: 0:00:00.27
+
+*** Psi4 encountered an error. Buy a developer more coffee!
+*** Resources and help at github.com/psi4/psi4.
